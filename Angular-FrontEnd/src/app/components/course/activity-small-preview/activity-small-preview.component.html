@@ -2,33 +2,33 @@
   <div class="card-body text-center" *ngIf="this.activity">
 
     <!-- locked -->
-    <div *ngIf="this.activityCompleteState==='locked' ">
-      <h3 class="card-title"><i class="fas fa-lock"></i></h3>
-      <h5 class="card-subtitle mb-2 text-muted">Locked</h5>
+    <div *ngIf="this.activityCompleteState==='locked'" >
+      <h3 ><i class="fas fa-lock"></i></h3>
+      <h5 class="textStatus">Locked</h5>
 
-      <h3>{{activity.title}}</h3>
-      <p class="card-text">Complete previous activities to unlock</p>
+      <h3 class="card-title">{{activity.title}}</h3>
+      <h3 class="card-text">Complete previous activities to unlock</h3>
     </div>
     
 
     <!-- unlocked -->
-    <div *ngIf="this.activityCompleteState==='unlocked' ">
-      <h3 class="card-title"><i class="fas fa-unlock-alt"></i></h3>
-      <h5 class="card-subtitle mb-2 text-muted">Unlocked</h5>
+    <div *ngIf="this.activityCompleteState==='unlocked' " >
+      <h3 class="unlocked"><i class="fas fa-unlock-alt"></i></h3>
+      <h5 class="textStatus">Unlocked</h5>
 
-      <h3>{{activity.title}}</h3>
-      <p class="card-text">This activity is now unlocked</p>
+      <h3 class="card-title" >{{activity.title}}</h3>
+      <h3 class="card-text">This activity is now unlocked</h3>
       <button type="button" class="btn btn-outline-success btn-sm" [routerLink]="['/doactivity' , activity._id ,  courseId  ]"> Do Activity</button>
       
     </div>
 
     <!-- completed -->
     <div *ngIf="this.activityCompleteState==='completed' ">
-      <h3 class="card-title"> <i class="fas fa-check-circle"></i></h3>
-      <h5 class="card-subtitle mb-2 text-muted">Completed</h5>
+      <h3 > <i class="fas fa-check-circle"></i></h3>
+      <h5 class="textStatus">Completed</h5>
 
-      <h3>{{activity.title}}</h3>
-      <p class="card-text">This activity is Completed</p>
+      <h3 class="card-title">{{activity.title}}</h3>
+      <h3 class="card-text">This activity is Completed</h3>
     </div>
     
 

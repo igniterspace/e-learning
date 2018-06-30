@@ -1,0 +1,26 @@
+.loginPageImage{
+    width: 90%;
+    margin-top:30px;
+}
+
+.loginComponent{
+    margin-top:150px;
+}
+
+/* headings */
+
+
+.headerMainTextSmall{
+    font-weight: 200;
+    font-size: 3rem;
+    text-align: center;
+    color: #4276cf;
+}
+b{
+    font-weight: 700;
+    font-size: 4rem; 
+}
+
+.col-sm-7{
+    margin-top:50px;
+}

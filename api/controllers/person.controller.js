@@ -13,6 +13,7 @@ module.exports.registerNewStudentTrigger = (req,res)=>{
     const newStudent=new Student({
         firstName:req.body.firstName,
         lastName:req.body.lastName,
+        gender:req.body.gender,
         email:req.body.email,
         password:req.body.password,
         courses:[],
@@ -32,6 +33,7 @@ module.exports.registerNewTeacherTrigger = (req,res)=>{
     const newTeacher = new Teacher({
         firstName:req.body.firstName,
         lastName:req.body.lastName,
+        gender:req.body.gender,
         email:req.body.email,
         password:req.body.password,
         courses:[],
@@ -92,8 +94,6 @@ module.exports.getPersonProfileTrigger = (req, res) => {
         person : req.user
     });
 }
-
-
 
 
 

@@ -3,14 +3,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.Types.ObjectId;
 
-
-
 //defining the 'course' schema
 const courseSchema= new Schema({
     title : {type:String ,required :true},
     price : {type:Number ,required :true},
     level : {type:String ,required :true},
     description : {type:String ,required :true},
+    descriptionShort:{type:String ,required :true},
     mainImageUrl : {type:String ,required :true},
 
     activities : [{
@@ -38,13 +37,20 @@ const courseSchema= new Schema({
 //exporting the schema model to be able to use it in other files
 const Course = module.exports= mongoose.model("Course" , courseSchema);
 
-//addCourse() method will add a new course to the database
+/**
+ * addCourse() method will add a new course to the database
+ * @param newCourse : The new course json object
+ * @param callback : The callback function
+ */
 module.exports.addCourse = ( newCourse , callback ) => {
     //save course to database
     newCourse.save(callback);
 }
 
-//getAllCourses() method will return all the courses in the database
+/**
+ * getAllCourses() method will return all the courses in the database
+ * @param callback : The callback function
+ */
 module.exports.getAllCourses =  (callback) => {
     //getting all the courses in the database
     Course.find({}, function(err, courses) {
@@ -57,7 +63,12 @@ module.exports.getAllCourses =  (callback) => {
     });
 }
 
-//getCourseById() method will get a single course with a specific id from the db
+
+/**
+ * getCourseById() method will get a single course with a specific id from the db
+ * @param courseId : the id of the course that you want to get
+ * @param callback : The callback function
+ */
 module.exports.getCourseById = (courseId,callback)=>{
     const query={_id:courseId};
     Course.findOne(query,callback);

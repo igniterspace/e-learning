@@ -16,7 +16,7 @@
         <app-activity-building-goals [activity]="activity" *ngIf="this.pageCount===3"></app-activity-building-goals>
 
         <!-- end of activity -->
-        <app-activity-end  *ngIf="this.pageCount===4" ></app-activity-end>
+        <app-activity-end [activity]="activity" [courseId]="courseId"  *ngIf="this.pageCount===4" ></app-activity-end>
 
         <!-- page changer -->
         <div class="alignCenter">

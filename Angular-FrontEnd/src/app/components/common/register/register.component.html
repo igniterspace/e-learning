@@ -1,39 +1,59 @@
-<div class="container">
-    <h2>REGISTER</h2>
-    <hr>
-    
-    <form class="form-horizontal" (submit) = "registerData()" ngNativeValidate>
-      <div class="form-group">
-          <label>Choose your user type</label>
-          <select class="form-control" name="userType" [(ngModel)]="userType">
-            <option value="student" > Student </option>
-            <option value="teacher" > Teacher </option>
-          </select>
-      </div>
-      <div class="form-group">
-        <label class="col-form-label col-form-label-sm" for="inputSmall">First Name</label>
-        <input class="form-control form-control-sm" type="text" placeholder="First Name" name="fName" [(ngModel)]="fName"  required>
-      </div>
-      <div class="form-group">
-        <label class="col-form-label col-form-label-sm" for="inputSmall">Last Name</label>
-        <input class="form-control form-control-sm" type="text" placeholder="Last Name"  name="lName" [(ngModel)]="lName" required>
-      </div>
-      <div class="form-group"> 
-        <label class="col-form-label col-form-label-sm" for="inputSmall">Email</label>
-        <input class="form-control form-control-sm" type="email" placeholder="Email"  name="email" [(ngModel)]="email" required>
-      </div>
-      <div class="form-group">
-          <label class="col-form-label col-form-label-sm" for="inputSmall">Password</label>
-          <input class="form-control form-control-sm" type="password" placeholder="Password"  name="password" [(ngModel)]="password" required>
-      </div>
-    
-      <!-- <div class="form-group">
-          <label class="col-form-label col-form-label-sm" for="inputSmall">Confirm Password</label>
-          <input class="form-control form-control-sm" type="password" placeholder="Confirm Password"  name="confirmPassword" [(ngModel)]="confirmPassword" required>
-      </div> -->
-    
-      <button type="reset" class="btn btn-secondary">Cancel</button>
-      <button type="submit" class="btn btn-primary">Register</button>
-    </form>
-    
+<div class="card">
+    <div class="card-body">
+
+        <h3 class="mainTitle">
+            REGISTER
+        </h3>
+        <div class="formContent">
+            <form class="form-horizontal" (submit) = "registerData()" ngNativeValidate>
+
+                <div class="form-group">
+                    <label>Choose your user type</label>
+                    <select class="form-control" name="userType" [(ngModel)]="userType">
+                      <option value="student" > Student </option>
+                      <option value="teacher" > Teacher </option>
+                    </select>
+                </div>
+          
+                <div class="form-group">
+                  <label class="col-form-label col-form-label-sm" for="inputSmall">First Name</label>
+                  <input class="form-control form-control-sm" type="text" placeholder="First Name" name="fName" [(ngModel)]="fName"  required>
+                </div>
+          
+                <div class="form-group">
+                  <label class="col-form-label col-form-label-sm" for="inputSmall">Last Name</label>
+                  <input class="form-control form-control-sm" type="text" placeholder="Last Name"  name="lName" [(ngModel)]="lName" required>
+                </div>
+          
+                <div class="form-group">
+                    <label>Choose your gender</label>
+                    <select class="form-control" name="gender" [(ngModel)]="gender">
+                      <option value="male" > Male </option>
+                      <option value="female" > Female </option>
+                    </select>
+                </div>
+          
+                <div class="form-group"> 
+                  <label class="col-form-label col-form-label-sm" for="inputSmall">Email</label>
+                  <input class="form-control form-control-sm" type="email" placeholder="Email"  name="email" [(ngModel)]="email" required>
+                </div>
+          
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-sm" for="inputSmall">Password</label>
+                    <input class="form-control form-control-sm" type="password" placeholder="Password"  name="password" [(ngModel)]="password" required>
+                </div>
+              
+                <!-- <div class="form-group">
+                    <label class="col-form-label col-form-label-sm" for="inputSmall">Confirm Password</label>
+                    <input class="form-control form-control-sm" type="password" placeholder="Confirm Password"  name="confirmPassword" [(ngModel)]="confirmPassword" required>
+                </div> -->
+              
+                <button type="submit" class="btn btn-success btn-lg btn-block loginBtn">REGISTER</button>
+                <p class="text-center"><button type="button" class="btn btn-link">Already have an account? LOGIN</button></p>
+
+                <!-- <button type="reset" class="btn btn-secondary">Cancel</button> -->
+              </form>
+                
+        </div>
+    </div>
 </div>

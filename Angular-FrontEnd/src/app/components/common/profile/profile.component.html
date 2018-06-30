@@ -1,11 +1,12 @@
-
 <div class="card">
   <div class="card-body">
       <div *ngIf="user" class="container text-center">
         <h1 class="mainHeading">Profile</h1>
         <hr>
 
-        <i class="fa fa-user-circle profilePicIcon"></i>
+        <img  *ngIf="user.gender" class="profilePicImg" src="../../../../assets/img/profile/{{user.gender}}.png" alt="">
+        <i  *ngIf="!user.gender" class="fa fa-user-circle profilePicIcon"></i>
+        
         <h3>{{user.firstName}} {{user.lastName}}</h3>
         <h3 class="email">({{user.email}})</h3>
 

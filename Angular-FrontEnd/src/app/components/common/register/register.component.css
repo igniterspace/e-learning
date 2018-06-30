@@ -1,0 +1,26 @@
+.mainTitle{
+    text-align: center;
+    background-color: #4582EC;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card-body{
+    padding: 0px !important;
+}
+
+.card{
+    border-radius: 20px;
+}
+
+.formContent{
+
+    padding: 10px 30px 30px 30px;
+}
+
+.loginBtn{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+

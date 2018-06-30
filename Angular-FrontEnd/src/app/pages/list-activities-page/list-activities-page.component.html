@@ -1,8 +1,9 @@
 <div class="container">
-    <h4>Activities</h4>
-    <hr>
-    
     <div *ngIf="this.course">
+        <h3 class="mainHeading">{{this.course.title}}</h3>
+        <hr> 
+        <h3 class="subHeading">Activities</h3>
+        <h3 class="decriptionHeading">These are all the activities in this course . They will be unlocked one by one !</h3>
         <app-course-activities [course]="this.course"></app-course-activities>
     </div>    
 </div>

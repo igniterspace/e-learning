@@ -25,10 +25,19 @@ router.get('/getallgroups', controller.getAllGroupsTrigger);
 
 /**
  * 
- * POST : /student/completeactivity
+ * POST : /student/addcompletedactivity
  * 
 */
-// router.post('/completeactivity', controller.);
+router.post('/addcompletedactivity', controller.addCompletedActivityIdToStudentTrigger);
+
+
+/**
+ * 
+ * GET : /student/getcompletedactivities
+ * 
+*/
+router.get('/getcompletedactivities', controller.getCompletedActivitiesTrigger);
+
 
 
 //exporting the router to be able to use it in the app.js or any other file

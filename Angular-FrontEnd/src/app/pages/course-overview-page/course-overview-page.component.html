@@ -1,28 +1,41 @@
 <div class="container">
-    <h4>Course Overview</h4>
-    <hr>
-    
+    <!-- <h3 class="mainPageTitle">Course Overview</h3>
+    <hr> -->
     <div *ngIf="this.course">
-        <h2>{{ course.title }}</h2>
-        <br>
-        <img class="mainImage" src="{{course.mainImageUrl}}" alt="">
-        <p>{{ course.description }} </p>
         
-        <br>
     
-        <h4>Activities</h4>
-        <br>
-        <ul class="list-group">
-            <li  *ngFor="let activity of course.activities; let i = index" class="list-group-item d-flex justify-content-between align-items-center">
-                {{i+1}}. {{activity.title}}
-            </li>
-        </ul>
-    
+        <h3 class="mainCourseTitle">{{ course.title }}</h3>
+        <hr>
+        <p class="text-center"><img class="mainImage" src="{{course.mainImageUrl}}" alt=""></p>
+
+       <div class="card">
+           <div class="card-body">
+                <h3 class="smallTitle">Description</h3>
+                <hr>
+                <h3 class="description">{{ course.description }} </h3>
+           </div>
+       </div>
+
+        
+        <div class="card">
+            <div class="card-body">
+                 <h3 class="smallTitle">Activities</h3>
+                 <hr>
+                 <ul class="list-group">
+                    <li  *ngFor="let activity of course.activities; let i = index" class="list-group-item d-flex justify-content-between align-items-center">
+                        {{i+1}}. {{activity.title}}
+                    </li>
+                </ul>
+                 
+            </div>
+        </div>
+ 
+        <h3 class="priceText">Price : ${{ course.price }}</h3>
         <br>
         
-        <h4>Price : ${{ course.price }}</h4>
-        <br>
-        <button type="button" class="btn btn-danger" [routerLink]="['/courses']"> Back </button>
-        <button *ngIf="this.authService.getUserType()==='Teacher'" type="button" class="btn btn-success" (click)="addCourse()"> Purchase </button>
-    </div>         
+        <p class="text-center">
+            <button type="button" class="btn btn-danger" [routerLink]="['/courses']"> Back </button>
+            <button *ngIf="this.authService.getUserType()==='Teacher'" type="button" class="btn btn-success" (click)="addCourse()"> Purchase </button>             
+        </p>
+        </div>         
 </div>

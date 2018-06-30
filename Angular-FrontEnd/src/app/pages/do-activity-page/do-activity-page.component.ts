@@ -10,7 +10,7 @@ import { CourseService} from "../../services/course/course.service";
 export class DoActivityPageComponent implements OnInit {
 
   //to track the page/content component
-  private pageCount:number=0 ;
+  private pageCount:number=4 ;
   //the id of the selected course will be stored for later use 
   private selectActivityId: String;
   //course id of activity
@@ -27,7 +27,7 @@ export class DoActivityPageComponent implements OnInit {
       //getting the params from the route 
       this.routerSubscription = this.route.params.subscribe(params => {
         this.selectActivityId = params['activityId']; 
-        this.courseId =params['courseId']; 
+        this.courseId = params['courseId']; 
 
         this.loadActivity(this.courseId,this.selectActivityId);
 
@@ -50,11 +50,11 @@ export class DoActivityPageComponent implements OnInit {
       this.activity=res.activities.filter((activity)=>{
         return activityId === activity._id;
       })[0];//getting the 1st value 
-      
-      console.log(this.activity)
     });
   }
 
+
+  
   /**
    *  these methods are used to navigate the pages
   */
@@ -70,7 +70,6 @@ export class DoActivityPageComponent implements OnInit {
       console.log(this.pageCount);
     }
 
-   
   }
 
 }

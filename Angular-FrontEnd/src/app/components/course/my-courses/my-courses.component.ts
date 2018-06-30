@@ -21,7 +21,7 @@ export class MyCoursesComponent implements OnInit {
 
   ngOnInit() {
     this.userType=this.authService.getUserType();
-    this.loadAllCourses(this.userType);
+    setTimeout(()=>{this.loadAllCourses(this.userType)},100);
   }
 
   /**

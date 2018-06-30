@@ -1,18 +1,26 @@
+<div class="card">
+    <div class="card-body">
 
-<h2>LOGIN</h2>
-<hr>
-
-
-<form class="form-horizontal" (submit)= "loginUser()" >
-    <div class="form-group">
-      <label class="col-form-label col-form-label-sm" for="inputSmall">Email</label>
-      <input class="form-control form-control-sm" type="text" placeholder="Email" name ="email" [(ngModel)]="email" >
+        <h3 class="mainTitle">
+            LOGIN
+        </h3>
+        <div class="formContent">
+            <form class="form-horizontal" (submit)= "loginUser()" >
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-sm" for="inputSmall">Email</label>
+                    <input class="form-control form-control-sm" type="text" placeholder="Email" name ="email" [(ngModel)]="email" >
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-sm" for="inputSmall">Password</label>
+                    <input class="form-control form-control-sm" type="password" placeholder="Password" name="password" [(ngModel)]="password">
+                </div>
+                
+                <!-- <button type="reset" class="btn btn-secondary">Cancel</button> -->
+                <button type="submit" class="btn btn-success btn-lg btn-block loginBtn">LOGIN</button>
+                <p class="text-center"><button type="button" class="btn btn-link">Register</button></p>
+            </form>  
+        </div>
     </div>
-    <div class="form-group">
-        <label class="col-form-label col-form-label-sm" for="inputSmall">Password</label>
-        <input class="form-control form-control-sm" type="password" placeholder="Password" name="password" [(ngModel)]="password">
-    </div>
-  
-    <button type="reset" class="btn btn-secondary">Cancel</button>
-    <button type="submit" class="btn btn-primary">Login</button>
-</form>        
+</div>
+
+

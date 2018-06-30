@@ -9,6 +9,7 @@ module.exports.addNewCourseTrigger = (req,res)=>{
         price : req.body.price,
         level : req.body.level,
         description : req.body.description,
+        descriptionShort:req.body.descriptionShort,
         mainImageUrl : req.body.mainImageUrl,
         activities : req.body.activities
     });

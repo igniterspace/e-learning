@@ -1,6 +1,25 @@
 .card{
-    min-height: 300px;
+    padding: 20px;
     vertical-align: middle;
     line-height: 40px; 
+}
+
+.card-text{
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0px 0px 10px 0px;
+
+}
+
+.card-title{
+    padding: 10px 0px 2px 0px;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.textStatus{
+    font-size: 1rem;
+    font-weight: 200;
+
 }
 

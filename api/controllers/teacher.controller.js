@@ -4,16 +4,16 @@ const Teacher= require('../models/teacher.model');
 module.exports.addCourseTrigger = (req,res)=>{
     const courseId = req.body.courseId;
     const teacherId = req.body.teacherId;
-
-    Teacher.addCourse(courseId , teacherId , (err, course)=>{
+            
+    Teacher.addCourse(courseId , teacherId , res , (err, course)=>{
         if(err){
             console.log(err);
             //if not inserted
-            res.json({state:false,message:"Adding course to the person failed"});
+            res.json({state:false,message:"Adding course failed"});
          }
          if(course){
             //if inserted
-            res.json({ state:true,message:"Adding course to the person successful"});
+            res.json({ state:true,message:"Course purchased successfully"});
          }
     });
     

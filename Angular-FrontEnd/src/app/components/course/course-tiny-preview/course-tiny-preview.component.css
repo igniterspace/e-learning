@@ -22,8 +22,14 @@ h3{
     font-size: 1.5rem;
 }
  h3.percentage{
+    padding: 5px;
     font-weight: 200;
     font-size: 1rem;
  }
 
+ .levelText{
+    padding: 5px;
+    font-weight: 200;
+    font-size: 1rem;
+ }
  

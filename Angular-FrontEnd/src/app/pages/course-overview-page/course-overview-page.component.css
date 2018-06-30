@@ -1,5 +1,49 @@
+/* images */
 .mainImage{
-    width: 36%;
+    width: 50%;
+    height: 200px;
+    size: cover;
+    object-fit: cover;
+    position: relative; 
+    margin: 10px auto 10px auto;
     border-radius: 20px;
-    margin: 0px 0px 30px 0px;
+}
+
+
+/* texts */
+
+.mainCourseTitle{
+    text-align: center;
+    font-weight: 200;
+    font-size: 2.8rem;
+    padding:10px 5px 0px 5px;
+}
+
+.smallTitle{
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.7rem;
+}
+
+.description{
+    font-weight: 300;
+    font-size: 1.0rem;
+    line-height: 1.4rem;
+    text-align: justify;
+
+}
+.card{
+    margin: auto;
+    width: 100%;;
+    border: none;
+ 
+}
+
+.priceText{
+    font-weight: 300;
+    text-align: center;
+}
+
+.btn{
+    width: 100px;
 }

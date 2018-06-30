@@ -1,9 +1,8 @@
 <div class="card">
   <div class="card-body">
-
     <div class="row" *ngIf="course">
       <div class="col-md-4" *ngFor="let activity of course.activities; let i = index">
-          <app-activity-small-preview [activity]='activity' [courseId]="course._id" ></app-activity-small-preview>
+          <app-activity-small-preview [activity]='activity' [courseId]="course._id" [completedActivities]="completedActivities" ></app-activity-small-preview>
       </div>
     </div>
   </div>

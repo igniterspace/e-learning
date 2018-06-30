@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
 
   fName:String;
   lName:String;
+  gender:String="male";
   email:String;
   password:String;
   confirmPassword:String;
@@ -34,13 +35,13 @@ export class RegisterComponent implements OnInit {
     const user ={
       firstName :this.fName,
       lastName:this.lName,
+      gender:this.gender,
       email:this.email,
       password:this.password,
       userType:this.userType
     }
 
     this.authService.registerUser(user).subscribe(res=>{
-
       //only if state is true
       if(res.state){
         //showing the success flash message

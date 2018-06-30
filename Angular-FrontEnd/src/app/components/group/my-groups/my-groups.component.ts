@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FlashMessagesService } from 'angular2-flash-messages'; 
 
 import { AuthService } from '../../../services/authentication/auth.service';
 import { GroupService } from '../../../services/group/group.service';
@@ -15,7 +16,7 @@ export class MyGroupsComponent implements OnInit {
   private groups:any;
   private groupName:String="Default(no name)";
 
-  constructor(private groupService:GroupService , private authService:AuthService ,private router:Router) { }
+  constructor(private flashMessagesService:FlashMessagesService , private groupService:GroupService , private authService:AuthService ,private router:Router) { }
 
   ngOnInit() {
     this.loadAllGroups();
@@ -38,7 +39,13 @@ export class MyGroupsComponent implements OnInit {
 
     this.groupService.createGroup(this.authService.getCurrentUserId(), groupName ).subscribe(res=>{
       if(res){
-        this.loadAllGroups();
+        if(res.state){
+          this.flashMessagesService.show( res.message , { cssClass: 'alert-success', timeout: 3000 });
+          this.loadAllGroups();
+        }else{
+          this.flashMessagesService.show( res.message , { cssClass: 'alert-danger', timeout: 3000 });
+        }
+    
       }  
     });
     

@@ -54,16 +54,25 @@ module.exports.addStudentToGroupTrigger = (req,res)=>{
             res.json({state:false,message:"Student email not found"});
         }
         if(person){
-            Group.addStudent(person._id , groupId ,(err,student)=>{
-                if(err){
-                    //if not inserted
-                    res.json({state:false,message:"Adding student to the group failed"});
-                }
-                if(student){
-                    //if inserted
-                    res.json({ state:true,message:"Adding student to the group successful"});
-                }    
-            });
+
+            //for validating if the student is already in the group
+            const isAlreadyInGroup = person.groups.some((group)=> group.equals(groupId));
+            
+            //validating if the student is already in the group
+            if(!isAlreadyInGroup){  
+                Group.addStudent(person._id , groupId ,(err,student)=>{
+                    if(err){
+                        //if not inserted
+                        res.json({state:false,message:"Adding student to the group failed"});
+                    }
+                    if(student){
+                        //if inserted
+                        res.json({ state:true,message:"Adding student to the group successful"});
+                    }    
+                });
+            }else{
+                res.json({ state:false,message:"Student is already in the group"});
+            }
         }     
     });
  }
@@ -74,7 +83,7 @@ module.exports.addStudentToGroupTrigger = (req,res)=>{
     const courseId = req.body.courseId;
     const groupId = req.body.groupId;
 
-    Group.addCourse(courseId,groupId,(err,group)=>{
+    Group.addCourse(courseId,groupId,res,(err,group)=>{
          if(err){
             console.log(err);
             //if not inserted

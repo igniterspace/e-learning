@@ -5,6 +5,15 @@
     padding: 10px 0px 20px 0px;
     color: rgb(182, 182, 182);
 }
+
+.profilePicImg{
+    width: 70%;
+    padding-bottom:0px;
+    margin: 15px;
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 100%;
+}
+
 .mainHeading{
     font-weight: 200;
     font-size: 2.5rem;

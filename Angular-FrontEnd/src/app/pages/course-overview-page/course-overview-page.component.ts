@@ -3,6 +3,7 @@ import {ActivatedRoute,Router} from '@angular/router';
 import { CourseService } from '../../services/course/course.service';
 import { TeacherService } from '../../services/teacher/teacher.service';
 import { AuthService } from '../../services/authentication/auth.service';
+import { FlashMessagesService } from 'angular2-flash-messages'; 
 
 @Component({
   selector: 'app-course-overview-page',
@@ -19,7 +20,7 @@ export class CourseOverviewPageComponent implements OnInit {
   private course:any;
 
   //constructor of CourseOverviewPageComponent
-  constructor(private authService:AuthService ,private route: ActivatedRoute , private courseService:CourseService ,private router:Router ,private teacherService:TeacherService) {}
+  constructor(private flashMessagesService: FlashMessagesService ,private authService:AuthService ,private route: ActivatedRoute , private courseService:CourseService ,private router:Router ,private teacherService:TeacherService) {}
 
   /** 
    * ngOnInit() method is called when the component is first loaded
@@ -47,10 +48,14 @@ export class CourseOverviewPageComponent implements OnInit {
   */
   addCourse(){
     this.teacherService.addCourse( this.selectCourseId , this.authService.getCurrentUserId()).subscribe(res=>{
+      if(res.state===true){
+        this.flashMessagesService.show( res.message , { cssClass: 'alert-success', timeout: 3000 });
+      }else{
+        this.flashMessagesService.show( res.message , { cssClass: 'alert-danger', timeout: 3000 });
+      }
     });
     this.router.navigate(["/teacherdashboard"]);
   }
 
-  
 
 }

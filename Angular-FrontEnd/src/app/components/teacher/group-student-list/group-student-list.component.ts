@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { FlashMessagesService } from 'angular2-flash-messages'; 
+
 
 import { GroupService} from "../../../services/group/group.service";
 
@@ -19,7 +21,7 @@ export class GroupStudentListComponent implements OnInit {
   //store the email of the student to add
   private studentEmail;
 
-  constructor(private groupService: GroupService) { }
+  constructor(private flashMessagesService:FlashMessagesService, private groupService: GroupService) { }
 
   //this is the method that is called when add student button is pressed
   onSubmitAddStudent(){
@@ -27,9 +29,10 @@ export class GroupStudentListComponent implements OnInit {
       if(res.state){
         this.loadStudentsList();
         this.studentEmail="";
+        this.flashMessagesService.show( res.message , { cssClass: 'alert-success', timeout: 3000 });
       }
       if(!res.state){
-        alert(res.message);
+        this.flashMessagesService.show( res.message , { cssClass: 'alert-danger', timeout: 3000 });
       }
     });
   }
