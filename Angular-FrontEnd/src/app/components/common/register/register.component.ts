@@ -53,6 +53,7 @@ export class RegisterComponent implements OnInit {
          this.flashMessagesService.show( res.message, { cssClass: 'alert-danger', timeout: 3000 });
           //redirecting the page back to register page
          this.router.navigate(['/register']);
+         this.router.navigate(["/login"]);
       }
     });
   }

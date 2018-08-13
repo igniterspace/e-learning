@@ -22,6 +22,7 @@ import { ActivityIntroductionComponent } from '../app/components/course/activity
 import { ActivityGoalsComponent } from '../app/components/course/activity/activity-goals/activity-goals.component';
 import { ActivityMeterialRequiredComponent } from '../app/components/course/activity/activity-meterial-required/activity-meterial-required.component';
 import { ActivityBuildingGoalsComponent } from '../app/components/course/activity/activity-building-goals/activity-building-goals.component';
+// import { ActivityImageUploadComponent } from '../app/components/course/activity/activity-image-upload/activity-image-upload.component';
 import { ActivityEndComponent } from '../app/components/course/activity/activity-end/activity-end.component';
 
 //header components
@@ -52,6 +53,8 @@ import { AuthGuard  }  from "../app/services/authentication/auth.gaurd";
 import { TeacherService  }  from "../app/services/teacher/teacher.service";
 import { GroupService  }  from "../app/services/group/group.service";
 import { StudentService  }  from "../app/services/student/student.service";
+import { ActivityImageUploadComponent } from './components/course/activity/activity-image-upload/activity-image-upload.component';
+
 
 //defining the routes of the app
 const applicationRoutes:Routes =[
@@ -104,7 +107,9 @@ const applicationRoutes:Routes =[
     ActivityGoalsComponent,
     ActivityMeterialRequiredComponent,
     ActivityBuildingGoalsComponent,
-    ActivityEndComponent
+    ActivityEndComponent,
+    ActivityImageUploadComponent,
+   
   ],
   imports: [
     BrowserModule,

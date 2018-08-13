@@ -4,32 +4,35 @@
         <hr>
 
         <!-- introduction -->
-        <app-activity-introduction [activity]="activity" *ngIf="this.pageCount===0"></app-activity-introduction>
+        <app-activity-introduction [activity]="activity" *ngIf="this.pageCount===5"></app-activity-introduction>
 
         <!-- project goals -->
-        <app-activity-goals [activity]="activity" *ngIf="this.pageCount===1" ></app-activity-goals>
+        <app-activity-goals [activity]="activity" *ngIf="this.pageCount===4"></app-activity-goals>
 
         <!-- project goals -->
-        <app-activity-meterial-required [activity]="activity" *ngIf="this.pageCount===2"></app-activity-meterial-required>
+        <app-activity-meterial-required [activity]="activity" *ngIf="this.pageCount===3"></app-activity-meterial-required>
 
         <!-- project goals -->
-        <app-activity-building-goals [activity]="activity" *ngIf="this.pageCount===3"></app-activity-building-goals>
+        <app-activity-building-goals [activity]="activity" *ngIf="this.pageCount===2"></app-activity-building-goals>
 
+        <!--image upload-->
+        <app-activity-image-upload [activity]="activity" *ngIf="this.pageCount===1"></app-activity-image-upload>
+        
         <!-- end of activity -->
-        <app-activity-end [activity]="activity" [courseId]="courseId"  *ngIf="this.pageCount===4" ></app-activity-end>
+        <app-activity-end [activity]="activity" [courseId]="courseId"  *ngIf="this.pageCount===0" ></app-activity-end>
 
         <!-- page changer -->
         <div class="alignCenter">
             <ul class="pagination pagination-lg">
                 <li class="page-item">
-                    <a class="page-link" (click)="goBackAPage()" >&laquo;</a>
+                    <a class="page-link" (click)= "goFowardAPage()" disabled="true">&laquo;</a>
                 </li>
                 <li class="page-item" >
-                    <a class="page-link" (click)="goFowardAPage()" disabled="true">&raquo;</a>
+                    <a class="page-link" (click)= "goBackAPage()" >&raquo;</a>
                 </li>
             </ul>
         </div>
-
+        
                         
     </div>
 </div>

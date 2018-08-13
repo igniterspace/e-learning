@@ -19,7 +19,7 @@ export class CourseService {
 
     //this will return the response of the get request in json format
     return this.http.get(getUrl)
-    .map(res=>res.json());;
+    .map(res=>res.json());
   }
 
   /**

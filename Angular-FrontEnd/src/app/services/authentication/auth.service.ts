@@ -49,9 +49,10 @@ export class AuthService {
     let headers= new Headers();
     headers.append('content-Type' ,'application/json');
     let postUrl="http://localhost:3000/person/login";
+    // console.log('auth service: ', postUrl,user, headers)
 
     //this will return the response of the post request
-    return this.http.post(postUrl ,user ,{ headers : headers})
+    return this.http.post(postUrl, user, { headers : headers})
     .map(res=>res.json());
   }
 

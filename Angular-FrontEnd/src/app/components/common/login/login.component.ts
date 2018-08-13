@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
       email:this.email,
       password:this.password
     }
+    // console.log(user);
 
     //passing user object to the login user method in the auth service
     this.authService.loginUser(user).subscribe(res=>{
@@ -46,6 +47,7 @@ export class LoginComponent implements OnInit {
         this.flashMessagesService.show( res.message , { cssClass: 'alert-danger', timeout: 3000 });
         //redirecting back to the login page
         this.router.navigate(["/login"]);
+        this.router.navigate(['/register']);
       }
     });
   }

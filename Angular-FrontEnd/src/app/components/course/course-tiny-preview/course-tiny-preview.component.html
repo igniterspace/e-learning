@@ -3,17 +3,17 @@
       <div  class="text-center">
         <div class="row">
           <div class="col-4">
-            <img class="couseImageMini" src="{{course.mainImageUrl}}" alt="" srcset="">
+            <img class="couseImageMini" src="{{course?.mainImageUrl}}" alt="" srcset="">
           </div>
           <div class="col-7 textCol">
-              <h3 >{{course.title}}</h3>
+              <h3 >{{course?.title}}</h3>
               
               <!-- will only be shown for students -->
               <span  *ngIf="this.authService.getUserType()==='Student'" >
                 <h3 class="percentage"> {{0}}% complete</h3> 
                 <hr>
                 <button [routerLink]="['/activities', course._id ]" type="button" class="btn btn-success btn-sm">Continue</button>
-                <button type="button" class="btn btn-outline-success btn-sm" [routerLink]="['/courseoverview', course._id ]">Overview</button> 
+                <button type="button" class="btn btn-outline-success btn-sm" [routerLink]="['/courseoverview', course?._id ]">Overview</button> 
               </span>
 
               <!-- will only be shown for Teachers -->
@@ -21,7 +21,7 @@
                   <h3 class="levelText"> Level : {{course.level}}</h3> 
                   <hr>
                   <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-                  <button type="button" class="btn btn-outline-success btn-sm" [routerLink]="['/courseoverview', course._id ]">Overview</button> 
+                  <button type="button" class="btn btn-outline-success btn-sm" [routerLink]="['/courseoverview', course?._id ]">Overview</button> 
               </span>
              
           </div>

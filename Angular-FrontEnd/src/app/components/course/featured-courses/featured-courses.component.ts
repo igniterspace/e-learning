@@ -20,7 +20,7 @@ export class FeaturedCoursesComponent implements OnInit {
   loadAllCourses(){
     this.courseService.getAllCourses().subscribe((res)=>{
       this.courses=res;
-      console.log(res);
+      // console.log(res);
     });
   }
 }

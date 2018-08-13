@@ -10,7 +10,7 @@ import { CourseService} from "../../services/course/course.service";
 export class DoActivityPageComponent implements OnInit {
 
   //to track the page/content component
-  private pageCount:number=4 ;
+  private pageCount:number=5 ;
   //the id of the selected course will be stored for later use 
   private selectActivityId: String;
   //course id of activity
@@ -58,18 +58,18 @@ export class DoActivityPageComponent implements OnInit {
   /**
    *  these methods are used to navigate the pages
   */
-  goBackAPage(){
+ goBackAPage(){
     if(this.pageCount>0){
       this.pageCount--;
       console.log(this.pageCount);
     }
   }
   goFowardAPage(){
-    if(this.pageCount<4){
+    if(this.pageCount<5){
       this.pageCount++;
       console.log(this.pageCount);
     }
-
+    
   }
 
 }

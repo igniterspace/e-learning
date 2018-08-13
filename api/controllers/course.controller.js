@@ -19,7 +19,7 @@ module.exports.addNewCourseTrigger = (req,res)=>{
         if(err){
             console.log(err);
             //if not inserted
-            res.json({state:false,message:"Add Course failed"});
+            res.json({state:false,message:"Add Course failed "+ err});
         }
         if(course){
             //if inserted

@@ -1,20 +1,21 @@
-<div class="container-fluid"> 
-  <div class="container text-center"> 
+<div class="container-fluid">
+    <div class="container text-center">
 
-      <h1 class="mainHeading">Featured Courses</h1>
+        <h1 class="mainHeading">Featured Courses</h1>
 
-      <div class="row" *ngIf="courses">
-          <div class="col-md-4">
-              <app-course-small-preview [course]="this.courses[3]"></app-course-small-preview>
-          </div>
-          <div class="col-md-4">
-              <app-course-small-preview [course]="this.courses[1]"></app-course-small-preview>
-          </div>
-          <div class="col-md-4">
-              <app-course-small-preview [course]="this.courses[0]"></app-course-small-preview>
-          </div>
-        </div> 
-  </div>
+        <div class="row" *ngIf="courses">
+            <div class="col-md-4" *ngFor="let course of courses">
+                <app-course-small-preview [course]="course"></app-course-small-preview>
+            </div>
+
+            <!-- <div class="col-md-4">
+                <app-course-small-preview [course]="this.courses[1]"></app-course-small-preview>
+            </div>
+            <div class="col-md-4">
+                <app-course-small-preview [course]="this.courses[0]"></app-course-small-preview>
+            </div> -->
+
+        </div>
+
+    </div>
 </div>
-
-

@@ -45,6 +45,7 @@ export class GroupCourseListComponent implements OnInit {
       });
     }else{
       this.flashMessagesService.show( "Please select a course to add to the group!" , { cssClass: 'alert-warning', timeout: 3000 });
+      console.log('Scratch')
     }
   }
 

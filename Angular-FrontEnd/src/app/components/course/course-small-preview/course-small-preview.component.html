@@ -1,17 +1,17 @@
 <div class="card">
   <div class="card-body text-center">
-    <img class="couseImageMini" src="{{course.mainImageUrl}}" alt="" srcset="">
+    <img class="couseImageMini" src="{{course?.mainImageUrl}}" alt="" srcset="">
     <span class="badge badge-danger">New</span>
     <div class="content">
-        <h2 class="card-title">{{course.title}}</h2>
-        <h5 class="levelHeading">Level : {{course.level}}</h5>
+        <h2 class="card-title">{{course?.title}}</h2>
+        <h5 class="levelHeading">Level : {{course?.level}}</h5>
         <h5 class="card-text text-muted">Some quick example text to build on the card title and make up the bulk of the card.</h5>
         
         <h5 class="priceHeading text-muted">price:</h5>
-        <h5 class="card-title">${{course.price}}</h5>
+        <h5 class="card-title">${{course?.price}}</h5>
 
         <hr>
-        <button [routerLink]="['/courseoverview', course._id ]" type="button" class="btn btn-primary btn-sm-custom">View</button>
+        <button [routerLink]="['/courseoverview', course?._id]" type="button" class="btn btn-primary btn-sm-custom">View</button>
     </div>
     
   </div>

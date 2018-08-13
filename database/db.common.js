@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 //creating the db connection
 const connection =mongoose.connect(config.database);
 
+ 
+
 module.exports = connection;
 
 
