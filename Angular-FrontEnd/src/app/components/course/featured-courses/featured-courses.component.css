@@ -1,12 +1,15 @@
 /* containers */
 .container-fluid {
-    background-color: rgb(243, 243, 243);
+    background-color: whitesmoke;
     padding: 30px;
+    padding-right: 30px;
+    padding-left: px;
 }
 
 /* headings */
 .mainHeading{
-    font-weight: 200;
+    font-weight: 400;
     padding: 20px;
-    font-size: 3.2vmax;
+    font-size: 3.6vmax;
+   color: #3b3251;
 }

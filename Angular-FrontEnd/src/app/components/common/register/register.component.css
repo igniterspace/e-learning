@@ -1,7 +1,7 @@
 .mainTitle{
     text-align: center;
-    background-color: #4582EC;
-    color: white;
+    background-color:#3b3251 ;
+    color: whitesmoke;
     padding: 20px;
     border-radius: 10px;
 }
@@ -11,7 +11,10 @@
 }
 
 .card{
-    border-radius: 20px;
+    border-radius: 50px;
+    border-color: #3b3251;
+    background-color: whitesmoke;
+    
 }
 
 .formContent{
@@ -24,3 +27,12 @@
     margin-bottom: 30px;
 }
 
+.btn btn-link{
+    color: #3b3251;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+body{
+    background-color: #3b3251;
+}

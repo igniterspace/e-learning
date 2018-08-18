@@ -15,10 +15,10 @@
 
 
 .headerMainTextSmall{
-    font-weight: 200;
+    font-weight: 400;
     font-size: 3rem;
     text-align: center;
-    color: #4276cf;
+    color: #3b3251;
 }
 b{
     font-weight: 700;
@@ -27,4 +27,13 @@ b{
 
 .col-sm-7{
     margin-top:50px;
+}
+
+.container{
+   
+    background-color: whitesmoke;
+    
+}
+.body{
+    background-color: #3b3251;
 }

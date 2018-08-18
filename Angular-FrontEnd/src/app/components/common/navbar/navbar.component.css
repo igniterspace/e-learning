@@ -7,8 +7,16 @@
 }
 .hiMessage{
     font-weight: 200;
-    font-size: 1rem;
+    font-size: 2rem;
     margin: 5px 10px 0px  0px;
     padding: 10px;
     border-right: 1px solid rgb(226, 226, 226);
+    color: rgb(146, 37, 37);
+    font-family: cursive;
+
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #3b3251;
+    border-color: #3b3251;
 }
