@@ -1,29 +1,35 @@
 <div class="card" >
     <div class="card-body text-center" *ngIf="this.activity">
   
+ <!-- unlocked -->
+ <div *ngIf="this.activityCompleteState==='unlocked' " >
+  <h3 class="unlocked"><i class="fas fa-unlock-alt"></i></h3>
+  <h5 class="textStatus">Unlocked</h5>
+
+  <h3 class="card-title" >{{activity.title}}</h3>
+  <h3 class="card-text">This activity is now unlocked</h3>
+  <button type="button" class="btn btn-outline-success btn-sm" [routerLink]="['/doactivity' , activity._id ,  courseId  ]"> Begin</button>
   
-      <!-- unlocked -->
-      <div *ngIf="this.activityCompleteState==='unlocked' " >
-        <h3 class="unlocked"><i class="fas fa-unlock-alt"></i></h3>
-        <h5 class="textStatus">Unlocked</h5>
-  
-        <h3 class="card-title" >{{activity.title}}</h3>
-        <h3 class="card-text">This activity is now unlocked</h3>
-        <button type="button" class="btn btn-outline-success btn-sm" [routerLink]="['/doactivity' , activity._id ,  courseId  ]"> Begin</button>
+</div>
+
+
+
+   <!-- locked -->
+   <div *ngIf="this.activityCompleteState==='locked'" >
+      <h3 ></h3>
+    <h3 ><i class="fas fa-lock"></i></h3>
+   
+    <h5 class="textStatus">Locked</h5>
+
+    <h3 class="card-title">{{activity.title}}</h3>
+    <h3 class="card-text">Complete previous activities to unlock</h3>
+    <button type="button" class="btn btn-outline-success btn-sm" [routerLink]="['/doactivity' , activity._id ,  courseId  ]"> Begin</button>
         
-      </div>
-  
-     <!-- locked -->
-     <div *ngIf="this.activityCompleteState==='locked'" >
-      <h3 ><i class="fas fa-lock"></i></h3>
-      <h5 class="textStatus">Locked</h5>
-  
-      <h3 class="card-title">{{activity.title}}</h3>
-      <h3 class="card-text">Complete previous activities to unlock</h3>
-      <button type="button" class="btn btn-outline-success btn-sm" [routerLink]="['/doactivity' , activity._id ,  courseId  ]"> Do Activity </button>
-    </div>
-      
-  
+   
+    
+  </div>
+
+
   
       <!-- completed -->
       <div *ngIf="this.activityCompleteState==='completed' ">

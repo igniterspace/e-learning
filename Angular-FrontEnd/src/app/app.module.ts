@@ -54,6 +54,7 @@ import { TeacherService  }  from "../app/services/teacher/teacher.service";
 import { GroupService  }  from "../app/services/group/group.service";
 import { StudentService  }  from "../app/services/student/student.service";
 import { ActivityImageUploadComponent } from './components/course/activity/activity-image-upload/activity-image-upload.component';
+import { ActivityQuestionPageComponent } from './components/course/activity/activity-question-page/activity-question-page.component';
 
 
 //defining the routes of the app
@@ -109,6 +110,7 @@ const applicationRoutes:Routes =[
     ActivityBuildingGoalsComponent,
     ActivityEndComponent,
     ActivityImageUploadComponent,
+    ActivityQuestionPageComponent,
    
   ],
   imports: [

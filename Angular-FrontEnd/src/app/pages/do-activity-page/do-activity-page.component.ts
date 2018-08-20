@@ -10,7 +10,7 @@ import { CourseService} from "../../services/course/course.service";
 export class DoActivityPageComponent implements OnInit {
 
   //to track the page/content component
-  private pageCount:number=5 ;
+  private pageCount:number=6 ;
   //the id of the selected course will be stored for later use 
   private selectActivityId: String;
   //course id of activity
@@ -65,7 +65,7 @@ export class DoActivityPageComponent implements OnInit {
     }
   }
   goFowardAPage(){
-    if(this.pageCount<5){
+    if(this.pageCount<6){
       this.pageCount++;
       console.log(this.pageCount);
     }

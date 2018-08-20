@@ -10,6 +10,8 @@ import { Router} from '@angular/router';
 })
 export class ActivitySmallPreviewComponent implements OnInit {
 
+  
+
   //store the activity object passed down from the parent
   private activity;
   //store the id of the course
@@ -24,7 +26,7 @@ export class ActivitySmallPreviewComponent implements OnInit {
 
   ngOnInit() {
     this.updateActivityStatus();
-   
+    
   }
 
   updateActivityStatus(){
