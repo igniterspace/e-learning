@@ -3,112 +3,32 @@
     <div class="card-body">
   
             <h4 class="card-title headingMain ">~ Upload Your Activity Image ~</h4>
-    
-<!-- 
-     <form action="/activity-image-upload.component.html" onsubmit="myFunction()">
-      <input type="file" name="pic" accept="C:/Users/User/Pictures/Screenshots/*"><br>
-      <input type="submit" value="Submit">
-     </form>
 
-         -->
-
-         <div id="userActions">
-          <p>Drag &amp; Drop Image</p>
-          <input type="file" id="fileUpload" />
-        </div>
-
-        <script>
+            <div class="container">
+                <h1>File Upload</h1>
+                <%= typeof msg != 'undefined' ? msg : '' %>
+          <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="file-field input-field">
+                  <div class="btn grey">
+                    <span>File</span>
+                    <input name="myImage" type="file">
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                  </div>
+                </div>
+            <button type ="submit" class="btn">Submit</button>
+              </form>
+        <br>
+             <img src="<%= typeof file != 'undefined' ? file : '' %>" class="responsive-img"> 
         
-		'use strict';
-/**
-// ||||||||||||||||||||||||||||||| \\
-//	Global Object $: Generic controls
-// ||||||||||||||||||||||||||||||| \\
-**/
-(function(){
-	// http://stackoverflow.com/questions/4083351/what-does-jquery-fn-mean
-	var $ = function( elem ){
-		if (!(this instanceof $)){
-      return new $(elem);
-		}
-		this.el = document.getElementById( elem );
-	};
-	window.$ = $;
-	$.prototype = {
-		onChange : function( callback ){
-			this.el.addEventListener('change', callback );
-			return this;
-		}
-	};
-})();
-
-/**
-// ||||||||||||||||||||||||||||||| \\
-//	Drag and Drop code for Upload
-// ||||||||||||||||||||||||||||||| \\
-**/
-var dragdrop = {
-	init : function( elem ){
-		elem.setAttribute('ondrop', 'dragdrop.drop(event)');
-		elem.setAttribute('ondragover', 'dragdrop.drag(event)' );
-	},
-	drop : function(e){
-		e.preventDefault();
-		var file = e.dataTransfer.files[0];
-		runUpload( file );
-	},
-	drag : function(e){
-		e.preventDefault();
-	}
-};
-
-/**
-// ||||||||||||||||||||||||||||||| \\
-//	Code to capture a file (image) 
-//  and upload it to the browser
-// ||||||||||||||||||||||||||||||| \\
-**/
-function runUpload( file ) {
-	// http://stackoverflow.com/questions/12570834/how-to-preview-image-get-file-size-image-height-and-width-before-upload
-	if( file.type === 'image/png'  || 
-			file.type === 'image/jpg'  || 
-		  file.type === 'image/jpeg' ||
-			file.type === 'image/gif'  ||
-			file.type === 'image/bmp'  ){
-		var reader = new FileReader(),
-				image = new Image();
-		reader.readAsDataURL( file );
-		reader.onload = function( _file ){
-			$('imgPrime').el.src = _file.target.result;
-			$('imgPrime').el.style.display = 'inline';
-		} // END reader.onload()
-	} // END test if file.type === image
-}
-
-/**
-// ||||||||||||||||||||||||||||||| \\
-//	window.onload fun
-// ||||||||||||||||||||||||||||||| \\
-**/
-window.onload = function(){
-	if( window.FileReader ){
-		// Connect the DIV surrounding the file upload to HTML5 drag and drop calls
-		dragdrop.init( $('userActions').el );
-		//	Bind the input[type="file"] to the function runUpload()
-		$('fileUpload').onChange(function(){ runUpload( this.files[0] ); });
-	}else{
-		// Report error message if FileReader is unavilable
-		var p   = document.createElement( 'p' ),
-				msg = document.createTextNode( 'Sorry, your browser does not support FileReader.' );
-		p.className = 'error';
-		p.appendChild( msg );
-		$('userActions').el.innerHTML = '';
-		$('userActions').el.appendChild( p );
-	}
-};
-        
-        </script>
-
-        <img id="imgPrime" src="" alt="uploaded image placeholder" />
+            </div>
+                <script
+                src="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+            
+            
     </div>
-  </div>
+</div>
