@@ -1,6 +1,6 @@
 <div class="">
   <div class="card-body">
-
+      
           <h4 class="card-title headingMain">~Question Page ~</h4>
 
 
@@ -9,8 +9,12 @@
             <div id="quiz"></div>
 
             <script>
+              
+ 
 
                 (function() {
+                  
+                  
   const myQuestions = [
     {
       question: "Who is the strongest?",
@@ -31,6 +35,7 @@
       correctAnswer: "c"
     },
     {
+      
       question: "Where is Waldo really?",
       answers: {
         a: "Antarctica",
@@ -40,7 +45,10 @@
       },
       correctAnswer: "d"
     }
+    
   ];
+
+  
 
   function buildQuiz() {
     // we'll need a place to store the HTML output
@@ -62,6 +70,9 @@
            </label>`
         );
       }
+      
+ 
+      
 
       // add this question and its answers to the output
       output.push(
@@ -73,7 +84,7 @@
     });
 
     // finally combine our output list into one string of HTML and put it on the page
-    quizContainer.innerHTML = output.join("");
+    quizContainer.innerHTML = output.jo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                in("");
   }
 
   function showResults() {
@@ -108,11 +119,13 @@
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
   }
 
+     
   function showSlide(n) {
     slides[currentSlide].classList.remove("active-slide");
     slides[n].classList.add("active-slide");
     currentSlide = n;
     
+
     if (currentSlide === 0) {
       previousButton.style.display = "none";
     } else {
@@ -155,7 +168,7 @@
   previousButton.addEventListener("click", showPreviousSlide);
   nextButton.addEventListener("click", showNextSlide);
 })();
-            
+
             </script>
 
           </div>

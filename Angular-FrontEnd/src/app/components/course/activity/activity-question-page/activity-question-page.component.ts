@@ -11,6 +11,8 @@ export class ActivityQuestionPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
+  
 
 }
