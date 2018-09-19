@@ -3,6 +3,7 @@ const Course= require('../models/course.model');
 
 
 module.exports.addNewCourseTrigger = (req,res)=>{
+    console.log("gehkgrglrg");
     //creating a new course object using the defined scemea
     const newCourse=new Course({
         title : req.body.title,

@@ -30,7 +30,15 @@ const courseSchema= new Schema({
             texts : [{type:String}]  , 
             imageUrls : [{type:String}] ,
             videoUrls : [{type:String}] 
+        },
+
+        "Questions" :{
+        	"Questiontitle" :["Who is the strongest?","What is the best site ever created?","Where is Waldo really?"],
+            "Answers": [[" a:Superman","b:The Terminator","c:Waluigi, obviously"],["a:SitePoint","b:Simple Steps Code","c:Trick question; they're both the best"],["a:Antarctica","b:Exploring the Pacific Ocean","c:Sitting in a tree","d:Minding his own business, so stop asking"]]
         }
+
+        
+       
     }]
 });
 
