@@ -31,14 +31,15 @@ export class ActivitySmallPreviewComponent implements OnInit {
 
   updateActivityStatus(){
     setTimeout(() => {
-      if(this.completedActivities.includes(this.activity._id)){
+      if(this.completedActivities.includes(this.activity)){
+        // if(this.completedActivities.includes(this.activity._id)){
         this.activityCompleteState='unlocked';
      
       }else{
         this.activityCompleteState='locked';
 
       }
-    }, 10 );
+    }, 1 );
 
 
   }
