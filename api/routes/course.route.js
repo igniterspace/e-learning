@@ -31,5 +31,6 @@ router.get('/one', controller.getCourseByIdTrigger);
 
 
 
+
 //exporting the router to be able to use it in the app.js or any other file
 module.exports = router;

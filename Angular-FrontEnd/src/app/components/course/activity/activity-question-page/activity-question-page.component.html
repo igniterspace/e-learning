@@ -7,19 +7,22 @@
     <h1>Quiz on Important Facts</h1>
     <div class="quiz-container">
       <div id="quiz"></div>
+      
+      <p>{{activity.Questions.Questiontitle[0]}}</p>
+      <p>{{activity.Questions.Answers[0]}}</p>
+     
+      
+      
+       
     </div>
 
-    <ul class="list-group">
-      <li  *ngFor="let projectGoalText of activity.projectGoals.texts; let i = index" class="list-group-item d-flex justify-content-between align-items-center">
-          {{i+1}}. {{projectGoalText}}
-        
-          
-</li>
-  </ul>     
+
+  
   <button id="previous">Previous Question</button>
+  <a href="activity-end.component.ts">Next Question</a>
   <button id="next">Next Question</button>
   <button id="submit">Submit Quiz</button>
-  <div id="results"></div>
+  <div id="results"></div> 
 </div>
 </div> <!-- End div-class -->
 
@@ -27,3 +30,4 @@
 <button type="button" onclick="document.write(5 + 6)">Try it</button>
 
 </script>
+

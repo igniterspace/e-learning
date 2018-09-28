@@ -8,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActivityQuestionPageComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+   // console.log("lakshan")
+  }
+  
 
   
 

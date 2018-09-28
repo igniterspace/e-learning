@@ -8,6 +8,7 @@ const courseSchema= new Schema({
     title : {type:String ,required :true},
     price : {type:Number ,required :true},
     level : {type:String ,required :true},
+    // question : {type:String , required : true},
     description : {type:String ,required :true},
     descriptionShort:{type:String ,required :true},
     mainImageUrl : {type:String ,required :true},
@@ -32,12 +33,12 @@ const courseSchema= new Schema({
             videoUrls : [{type:String}] 
         },
 
-        "Questions" :{
-        	"Questiontitle" :["Who is the strongest?","What is the best site ever created?","Where is Waldo really?"],
-            "Answers": [[" a:Superman","b:The Terminator","c:Waluigi, obviously"],["a:SitePoint","b:Simple Steps Code","c:Trick question; they're both the best"],["a:Antarctica","b:Exploring the Pacific Ocean","c:Sitting in a tree","d:Minding his own business, so stop asking"]]
+        Questions:{
+        	Questiontitle :[{type:String}],
+            Answers: [[{type:String}],[{type:String}],[{type:String}]]
         }
 
-        
+
        
     }]
 });
@@ -60,7 +61,7 @@ module.exports.addCourse = ( newCourse , callback ) => {
  * @param callback : The callback function
  */
 module.exports.getAllCourses =  (callback) => {
-    //getting all the courses in the database
+    //getting all the courses in the databasev
     Course.find({}, function(err, courses) {
         //creating a array will all the courses from the database
         let coursesArray = [];

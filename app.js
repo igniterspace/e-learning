@@ -14,7 +14,8 @@ const storage = multer.diskStorage({
     filename: function(req, file, cb){
         cb(null,file.fieldname +  '-' + Date.now() + path.extname(file.originalname));
     }
-  
+
+    
 });
 
 //init upload
@@ -51,6 +52,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 
 app.get('/', (req, res) => res.render('index'));
+//app.get('/', (req, res) => res.render('Question'));
 
 app.post('/upload', (req, res) => {
    upload(req, res, (err) => {
@@ -133,6 +135,11 @@ app.use('/group', groupRoute);
 //if not index.html file is available in the public folder 
 app.get('/',(req,res)=>{
     res.send("NOTE : This will be replaced by the static html in the public folder");
+
+    // app.get('/',(req,res)=>{
+         // res.send("hello");
+    
+    
 });
 
 // =========================== PORT ===============================

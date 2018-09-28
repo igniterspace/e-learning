@@ -3,12 +3,13 @@ const Course= require('../models/course.model');
 
 
 module.exports.addNewCourseTrigger = (req,res)=>{
-    console.log("gehkgrglrg");
+    // console.log("gehkgrglrg");
     //creating a new course object using the defined scemea
     const newCourse=new Course({
         title : req.body.title,
         price : req.body.price,
         level : req.body.level,
+        question : req.body.question,
         description : req.body.description,
         descriptionShort:req.body.descriptionShort,
         mainImageUrl : req.body.mainImageUrl,
@@ -56,5 +57,24 @@ module.exports.getCourseByIdTrigger = (req,res) => {
             //if successful - sending the course as the response
             res.json(course);
         }
-    })
-}
+    }); 
+};
+
+        module.exports.QuestionAddTrigger = (req,res) => {
+            // getting the couse id sent in the request
+            const questionadd =req.query.questionadd;
+        
+            Course.getquestionById(questionAdd , (err,question)=>{
+                if(err){
+                    // if not succesful
+                    res.json({ state:false , message:"Getting question failed"});
+                }
+                if(question){
+                    // if successful - sending the question as the response
+                    res.json(question);
+
+
+                }
+
+            }); 
+        };
